@@ -27,9 +27,8 @@ function App() {
       <div className="container-right flex-column">
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} /> {/* Varsayılan sayfa */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/all-games" element={<MoviesPage />} />
-          {/* Diğer sayfalar buraya eklenecek */}
         </Routes>
       </div>
     </div>

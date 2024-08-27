@@ -7,7 +7,7 @@ function MoviesPage() {
   return (
     <div className="movies-container">
       {movies.length > 0 ? (
-        <div className="movies-grid">
+        <div className="">
           {movies.map((movie) => (
             <div key={movie.id} className="movie-card">
               <img
@@ -18,7 +18,7 @@ function MoviesPage() {
           ))}
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>Loading</p>
       )}
     </div>
   );
