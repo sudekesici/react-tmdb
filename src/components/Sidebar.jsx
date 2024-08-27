@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div>
-      <div className="left-bar flex-column">
+      <div className="sidebar flex-column">
         <div className="icons">
           <a>
             <i
@@ -35,13 +35,13 @@ function Sidebar() {
           </div>
         </div>
 
-        <div className="left-button flex-column">
+        <div className="sidebar-button flex-column">
           <Link to="" className="button">
             My Hub
           </Link>
 
           <Link to="/all-games" className="button">
-            All Games
+            All Movies
           </Link>
 
           <Link to="" className="button">

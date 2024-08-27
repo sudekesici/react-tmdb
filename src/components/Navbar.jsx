@@ -2,8 +2,8 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="header">
-      <div className="header-left flex-row">
+    <div className="navbar">
+      <div className="navbar-left flex-row">
         <a>
           <div className="button">Home</div>
         </a>
@@ -18,7 +18,7 @@ function Navbar() {
         </a>
       </div>
 
-      <div className="header-right flex-row">
+      <div className="navbar-right flex-row">
         <div>
           <input placeholder="Search movie titles " className="search"></input>
           <a>
@@ -36,19 +36,19 @@ function Navbar() {
           </select>
         </div>
 
-        <a className="header-icon">
+        <a className="navbar-icon">
           <i
             class="fa-solid fa-window-minimize"
             style={{ color: "#ffffff" }}
           ></i>
         </a>
-        <a className="header-icon">
+        <a className="navbar-icon">
           <i
             class="fa-regular fa-window-restore"
             style={{ color: "#ffffff" }}
           ></i>
         </a>
-        <a className="header-icon">
+        <a className="navbar-icon">
           <i class="fa-solid fa-xmark" style={{ color: "#ffffff" }}></i>
         </a>
       </div>
