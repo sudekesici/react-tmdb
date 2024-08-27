@@ -1,20 +1,36 @@
-import { useState } from "react";
+import React, { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchMovies } from "./api/tmdb";
+import { setMovies } from "./redux/moviesSlice";
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import MoviesPage from "./pages/MoviesPage";
+import HomePage from "./pages/HomePage";
 import "./App.css";
-import LeftBar from "./components/LeftBar";
-import TopBar from "./components/TopBar";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
-
-//const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
-//const BASE_URL = "https://api.themoviedb.org/3";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getMovies = async () => {
+      const movies = await fetchMovies();
+      dispatch(setMovies(movies));
+    };
+
+    getMovies();
+  }, [dispatch]);
+
   return (
     <div className="container">
-      <LeftBar />
-      <div className=" container-right flex-column ">
-        <TopBar></TopBar>
-        <div className="cards"></div>
+      <Sidebar />
+      <div className="container-right flex-column">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} /> {/* Varsayılan sayfa */}
+          <Route path="/all-games" element={<MoviesPage />} />
+          {/* Diğer sayfalar buraya eklenecek */}
+        </Routes>
       </div>
     </div>
   );

@@ -1,26 +1,13 @@
 import React from "react";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-function Card({ movie }) {
-  const { poster_path, title, overview } = movie;
-  const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
-
+function Card({ image, title, description }) {
   return (
     <div className="card">
-      <img className="card-image" src={imageUrl} alt={title} />
+      <img src={image} alt={title} className="card-image" />
       <div className="title-icon">
-        <h2 style={{ fontSize: "14px" }}>{title}</h2>
-        <KeyboardArrowRightIcon />
+        <h2>{title}</h2>
       </div>
-      <p
-        style={{
-          fontFamily: "Roboto, sans-serif",
-          fontSize: "14px",
-          color: "#b5b5be",
-        }}
-      >
-        {overview}
-      </p>
+      <p>{description}</p>
     </div>
   );
 }

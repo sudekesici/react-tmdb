@@ -1,17 +1,16 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const initialState = {
-  cards: [],
-  status: "idle",
-  error: null,
-};
+import { createSlice } from "@reduxjs/toolkit";
 
 export const moviesSlice = createSlice({
   name: "movies",
-  initialState,
-  reducers: {},
+  initialState: {
+    movies: [],
+  },
+  reducers: {
+    setMovies: (state, action) => {
+      state.movies = action.payload;
+    },
+  },
 });
 
-export const {} = moviesSlice.actions;
+export const { setMovies } = moviesSlice.actions;
 export default moviesSlice.reducer;

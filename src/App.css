@@ -95,7 +95,8 @@ body{
   }
 
   .button{
-    padding: 5px;
+    padding: 10px;
+    text-decoration: none;
   }
  
   .button:hover{

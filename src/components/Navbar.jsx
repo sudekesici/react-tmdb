@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+function Navbar() {
   return (
     <div className="header">
       <div className="header-left flex-row">
@@ -56,4 +56,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;
